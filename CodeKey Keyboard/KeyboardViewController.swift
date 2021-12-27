@@ -53,8 +53,10 @@ class KeyboardViewController: UIInputViewController {
         var buttons = [UIButton]()
         
         for c in letters {
-            let thisButton = UIButton(type: .system)
-            thisButton.setTitle(String(c), for: [])
+            let keyText = String(c)
+            let thisButton = PassableUIButton()
+            thisButton.params["text"] = keyText
+            thisButton.setTitle(keyText, for: [])
             thisButton.sizeToFit()
             thisButton.translatesAutoresizingMaskIntoConstraints = false
             thisButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
@@ -88,7 +90,7 @@ class KeyboardViewController: UIInputViewController {
         self.nextKeyboardButton.setTitleColor(textColor, for: [])
     }
     
-    @objc func tapButton() {
-        self.textDocumentProxy.insertText("Q")
+    @objc func tapButton(sender: PassableUIButton) {
+        self.textDocumentProxy.insertText(sender.params["text"] as! String)
     }
 }
