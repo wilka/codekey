@@ -14,6 +14,8 @@
 		3E85EE5A2779DC730064F865 /* CodeKeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E85EE592779DC730064F865 /* CodeKeyTests.swift */; };
 		3E85EE642779DC730064F865 /* CodeKeyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E85EE632779DC730064F865 /* CodeKeyUITests.swift */; };
 		3E85EE662779DC730064F865 /* CodeKeyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E85EE652779DC730064F865 /* CodeKeyUITestsLaunchTests.swift */; };
+		3E85EE792779DED30064F865 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E85EE782779DED30064F865 /* KeyboardViewController.swift */; };
+		3E85EE7D2779DED30064F865 /* CodeKey Keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3E85EE762779DED30064F865 /* CodeKey Keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +33,28 @@
 			remoteGlobalIDString = 3E85EE442779DC720064F865;
 			remoteInfo = CodeKey;
 		};
+		3E85EE7B2779DED30064F865 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E85EE3D2779DC720064F865 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E85EE752779DED30064F865;
+			remoteInfo = "CodeKey Keyboard";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3E85EE812779DED30064F865 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3E85EE7D2779DED30064F865 /* CodeKey Keyboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3E85EE452779DC720064F865 /* CodeKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +67,9 @@
 		3E85EE5F2779DC730064F865 /* CodeKeyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeKeyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E85EE632779DC730064F865 /* CodeKeyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeKeyUITests.swift; sourceTree = "<group>"; };
 		3E85EE652779DC730064F865 /* CodeKeyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeKeyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3E85EE762779DED30064F865 /* CodeKey Keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CodeKey Keyboard.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E85EE782779DED30064F865 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		3E85EE7A2779DED30064F865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +94,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3E85EE732779DED30064F865 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,6 +110,7 @@
 				3E85EE472779DC720064F865 /* CodeKey */,
 				3E85EE582779DC730064F865 /* CodeKeyTests */,
 				3E85EE622779DC730064F865 /* CodeKeyUITests */,
+				3E85EE772779DED30064F865 /* CodeKey Keyboard */,
 				3E85EE462779DC720064F865 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,6 +121,7 @@
 				3E85EE452779DC720064F865 /* CodeKey.app */,
 				3E85EE552779DC730064F865 /* CodeKeyTests.xctest */,
 				3E85EE5F2779DC730064F865 /* CodeKeyUITests.xctest */,
+				3E85EE762779DED30064F865 /* CodeKey Keyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,6 +162,15 @@
 			path = CodeKeyUITests;
 			sourceTree = "<group>";
 		};
+		3E85EE772779DED30064F865 /* CodeKey Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				3E85EE782779DED30064F865 /* KeyboardViewController.swift */,
+				3E85EE7A2779DED30064F865 /* Info.plist */,
+			);
+			path = "CodeKey Keyboard";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,10 +181,12 @@
 				3E85EE412779DC720064F865 /* Sources */,
 				3E85EE422779DC720064F865 /* Frameworks */,
 				3E85EE432779DC720064F865 /* Resources */,
+				3E85EE812779DED30064F865 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3E85EE7C2779DED30064F865 /* PBXTargetDependency */,
 			);
 			name = CodeKey;
 			productName = CodeKey;
@@ -183,6 +229,23 @@
 			productReference = 3E85EE5F2779DC730064F865 /* CodeKeyUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		3E85EE752779DED30064F865 /* CodeKey Keyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E85EE7E2779DED30064F865 /* Build configuration list for PBXNativeTarget "CodeKey Keyboard" */;
+			buildPhases = (
+				3E85EE722779DED30064F865 /* Sources */,
+				3E85EE732779DED30064F865 /* Frameworks */,
+				3E85EE742779DED30064F865 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CodeKey Keyboard";
+			productName = "CodeKey Keyboard";
+			productReference = 3E85EE762779DED30064F865 /* CodeKey Keyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -204,6 +267,9 @@
 						CreatedOnToolsVersion = 13.1;
 						TestTargetID = 3E85EE442779DC720064F865;
 					};
+					3E85EE752779DED30064F865 = {
+						CreatedOnToolsVersion = 13.1;
+					};
 				};
 			};
 			buildConfigurationList = 3E85EE402779DC720064F865 /* Build configuration list for PBXProject "CodeKey" */;
@@ -222,6 +288,7 @@
 				3E85EE442779DC720064F865 /* CodeKey */,
 				3E85EE542779DC730064F865 /* CodeKeyTests */,
 				3E85EE5E2779DC730064F865 /* CodeKeyUITests */,
+				3E85EE752779DED30064F865 /* CodeKey Keyboard */,
 			);
 		};
 /* End PBXProject section */
@@ -244,6 +311,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3E85EE5D2779DC730064F865 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E85EE742779DED30064F865 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -279,6 +353,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3E85EE722779DED30064F865 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E85EE792779DED30064F865 /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -291,6 +373,11 @@
 			isa = PBXTargetDependency;
 			target = 3E85EE442779DC720064F865 /* CodeKey */;
 			targetProxy = 3E85EE602779DC730064F865 /* PBXContainerItemProxy */;
+		};
+		3E85EE7C2779DED30064F865 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E85EE752779DED30064F865 /* CodeKey Keyboard */;
+			targetProxy = 3E85EE7B2779DED30064F865 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -414,6 +501,7 @@
 		3E85EE6A2779DC730064F865 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -443,6 +531,7 @@
 		3E85EE6B2779DC730064F865 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -565,6 +654,56 @@
 			};
 			name = Release;
 		};
+		3E85EE7F2779DED30064F865 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7N4Q549ZDX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "CodeKey Keyboard/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "CodeKey Keyboard";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.codekey.CodeKey.CodeKey-Keyboard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3E85EE802779DED30064F865 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7N4Q549ZDX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "CodeKey Keyboard/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "CodeKey Keyboard";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.codekey.CodeKey.CodeKey-Keyboard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -600,6 +739,15 @@
 			buildConfigurations = (
 				3E85EE702779DC730064F865 /* Debug */,
 				3E85EE712779DC730064F865 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E85EE7E2779DED30064F865 /* Build configuration list for PBXNativeTarget "CodeKey Keyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E85EE7F2779DED30064F865 /* Debug */,
+				3E85EE802779DED30064F865 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

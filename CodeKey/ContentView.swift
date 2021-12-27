@@ -7,10 +7,16 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+    @State private var username: String = ""
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text("Hello, world!")
+                .padding()
+            TextField("Username", text: $username).padding()
+        }
     }
 }
 
