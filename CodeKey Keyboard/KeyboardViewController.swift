@@ -11,8 +11,7 @@ class KeyboardViewController: UIInputViewController {
 
 
     @IBOutlet var nextKeyboardButton: UIButton!
-    @IBOutlet var textInput: UIButton!
-    
+  
     override func updateViewConstraints() {
         super.updateViewConstraints()
         
@@ -31,21 +30,41 @@ class KeyboardViewController: UIInputViewController {
         
         self.nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
         
-        self.textInput = UIButton(type: .system)
-        self.textInput.setTitle("Q", for: [])
-        self.textInput.sizeToFit()
-        self.textInput.translatesAutoresizingMaskIntoConstraints = false
-        self.textInput.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+        let qRow = UIStackView(arrangedSubviews: addFirstRow())
+        qRow.sizeToFit()
+        qRow.translatesAutoresizingMaskIntoConstraints = false
         
-        self.view.addSubview(self.textInput)
+        
+        self.view.addSubview(qRow)
         self.view.addSubview(self.nextKeyboardButton)
-        
-        self.textInput.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        self.textInput.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
         
         self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         self.nextKeyboardButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        
+        qRow.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        qRow.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        
+        // For the overall layout, it feels having a row per row of keys would work. Then stuff just needs to fit left -> right in each row. You can add spacing at the start of a row to ident the 'a' row a little. Or mayve just add a padding item, then you can also use that after the shift before teh 'z'
+        
     }
+    
+    func addFirstRow() -> [UIButton] {
+        let letters = "QWERTYUIOP";
+        var buttons = [UIButton]()
+        
+        for c in letters {
+            let thisButton = UIButton(type: .system)
+            thisButton.setTitle(String(c), for: [])
+            thisButton.sizeToFit()
+            thisButton.translatesAutoresizingMaskIntoConstraints = false
+            thisButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+            
+            buttons.append(thisButton)
+        }
+        
+        return buttons
+    }
+    
     
     override func viewWillLayoutSubviews() {
         self.nextKeyboardButton.isHidden = !self.needsInputModeSwitchKey
