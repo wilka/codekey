@@ -13,8 +13,14 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Hello, world!")
-                .padding()
+            Button("Test") {}
+                .buttonStyle(.borderedProminent)
+            Button {
+                print("clicked")
+            }
+            label: {
+                Text("Cheese").padding()
+            }
             TextField("Username", text: $username).padding()
         }
     }

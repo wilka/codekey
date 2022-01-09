@@ -38,6 +38,7 @@ class KeyboardViewController: UIInputViewController {
         
         for keyRow in rowOfKeys {
             let row = UIStackView(arrangedSubviews: keyRow)
+          //  row.layer.borderWidth = 2
             row.sizeToFit()
             row.translatesAutoresizingMaskIntoConstraints = false
             rows.append(row)
@@ -60,26 +61,6 @@ class KeyboardViewController: UIInputViewController {
         column.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
     }
     
-    func addFirstRow() -> [UIButton] {
-        let letters = "QWERTYUIOP";
-        var buttons = [UIButton]()
-        
-        for c in letters {
-            let keyText = String(c)
-            let thisButton = PassableUIButton()
-            thisButton.params["text"] = keyText
-            thisButton.setTitle(keyText, for: [])
-            thisButton.sizeToFit()
-            thisButton.translatesAutoresizingMaskIntoConstraints = false
-            thisButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
-            
-            buttons.append(thisButton)
-        }
-        
-        return buttons
-    }
-   
-    
     func buildKeyboardRow(letters: String) -> [UIButton] {
         var buttons = [UIButton]()
         
@@ -88,6 +69,7 @@ class KeyboardViewController: UIInputViewController {
             let thisButton = PassableUIButton()
             thisButton.params["text"] = keyText
             thisButton.setTitle(keyText, for: [])
+            thisButton.setTitleColor(.green, for: .normal)
             thisButton.sizeToFit()
             thisButton.translatesAutoresizingMaskIntoConstraints = false
             thisButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
