@@ -36,10 +36,16 @@ class KeyboardViewController: UIInputViewController {
         
         var rows = [UIStackView]()
         
+        var rowHightlight = true
+        
         for keyRow in rowOfKeys {
             let row = UIStackView(arrangedSubviews: keyRow)
+            // TODO: Trying to control the size of the buttons, but nothing is working
+            row.frame.size = CGSize(width: 100, height: 1000)
+            row.backgroundColor = rowHightlight ? .blue : .darkGray
+            rowHightlight = !rowHightlight
           //  row.layer.borderWidth = 2
-            row.sizeToFit()
+            //row.sizeToFit()
             row.translatesAutoresizingMaskIntoConstraints = false
             rows.append(row)
         }
@@ -47,7 +53,8 @@ class KeyboardViewController: UIInputViewController {
         
         let column = UIStackView(arrangedSubviews: rows)
         column.axis = .vertical
-        column.sizeToFit()
+        //column.sizeToFit()
+        
         column.translatesAutoresizingMaskIntoConstraints = false
         
         
@@ -69,8 +76,8 @@ class KeyboardViewController: UIInputViewController {
             let thisButton = PassableUIButton()
             thisButton.params["text"] = keyText
             thisButton.setTitle(keyText, for: [])
-            thisButton.setTitleColor(.green, for: .normal)
-            thisButton.sizeToFit()
+            thisButton.setTitleColor(.red, for: [])
+            thisButton.frame.size = CGSize(width: 100, height: 100)
             thisButton.translatesAutoresizingMaskIntoConstraints = false
             thisButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
             
