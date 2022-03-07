@@ -17,6 +17,7 @@
 		3E85EE792779DED30064F865 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E85EE782779DED30064F865 /* KeyboardViewController.swift */; };
 		3E85EE7D2779DED30064F865 /* CodeKey Keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3E85EE762779DED30064F865 /* CodeKey Keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3E85EE83277A56870064F865 /* PassableUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E85EE82277A56870064F865 /* PassableUIButton.swift */; };
+		3EC2ACC627D6C45100E03B71 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC2ACC527D6C45100E03B71 /* KeyboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		3E85EE782779DED30064F865 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		3E85EE7A2779DED30064F865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E85EE82277A56870064F865 /* PassableUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassableUIButton.swift; sourceTree = "<group>"; };
+		3EC2ACC527D6C45100E03B71 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				3E85EE782779DED30064F865 /* KeyboardViewController.swift */,
 				3E85EE7A2779DED30064F865 /* Info.plist */,
 				3E85EE82277A56870064F865 /* PassableUIButton.swift */,
+				3EC2ACC527D6C45100E03B71 /* KeyboardView.swift */,
 			);
 			path = "CodeKey Keyboard";
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EC2ACC627D6C45100E03B71 /* KeyboardView.swift in Sources */,
 				3E85EE83277A56870064F865 /* PassableUIButton.swift in Sources */,
 				3E85EE792779DED30064F865 /* KeyboardViewController.swift in Sources */,
 			);

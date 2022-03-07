@@ -6,10 +6,10 @@
 //
 
 import UIKit
+import SwiftUI
+
 
 class KeyboardViewController: UIInputViewController {
-
-
     @IBOutlet var nextKeyboardButton: UIButton!
   
     override func updateViewConstraints() {
@@ -21,7 +21,13 @@ class KeyboardViewController: UIInputViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Perform custom UI setup here
+        // Lifted from https://stackoverflow.com/a/65351381/1367
+        let hostingController = UIHostingController(rootView: KeyboardView(viewController: self))
+        view.addSubview(hostingController.view)
+        addChild(hostingController)
+        
+        
+        // Next keyboard stuff
         self.nextKeyboardButton = UIButton(type: .system)
         
         self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), for: [])
@@ -29,6 +35,8 @@ class KeyboardViewController: UIInputViewController {
         self.nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = false
         
         self.nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
+        
+        /*
         
         let rowOfKeys = [buildKeyboardRow(letters: "QWERTYUIOP"),
                                    buildKeyboardRow(letters: "ASDFGHJKL"),
@@ -66,11 +74,13 @@ class KeyboardViewController: UIInputViewController {
         
         column.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
         column.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+         */
     }
     
     func buildKeyboardRow(letters: String) -> [UIButton] {
         var buttons = [UIButton]()
-        
+        // Wilka: you probably need to make a view for the button, cos it's going to have a lot of logic going on. Is that even the correct
+        // way to break things down in SwiftUI?
         for c in letters {
             let keyText = String(c)
             let thisButton = PassableUIButton()
