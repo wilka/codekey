@@ -23,7 +23,9 @@ struct KeyboardView: View {
                 Button("Go away", role: .cancel) {}
             }
             
-            Rectangle().fill(Color.green).frame(width: 50, height: 150)
+            // Why is this rectangle landing in the middle? It feel slike it should stack with the button.
+            // Also, i can't see the button.
+            Rectangle().fill(Color.green).frame(width: 150, height: 150)
         }
     }
 }

@@ -13,15 +13,33 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Button("Test") {}
-                .buttonStyle(.borderedProminent)
-            Button {
-                print("clicked")
-            }
-            label: {
-                Text("Cheese").padding()
-            }
-            TextField("Username", text: $username).padding()
+            HStack {
+                Button("Q") {}.buttonStyle(.borderedProminent)
+                Button("W") {}.buttonStyle(.borderedProminent)
+                Button("E") {}.buttonStyle(.borderedProminent)
+                Button("R") {}.buttonStyle(.borderedProminent)
+                Button("T") {}.buttonStyle(.borderedProminent)
+                Button("Y") {}.buttonStyle(.borderedProminent)
+            }.background(Color.purple)
+            
+            HStack {
+                Button("A") {}.buttonStyle(.borderedProminent)
+                Button("S") {}.buttonStyle(.borderedProminent)
+                Button("D") {}.buttonStyle(.borderedProminent)
+                Button("F") {}.buttonStyle(.borderedProminent)
+                Button("G") {}.buttonStyle(.borderedProminent)
+                Button("H") {}.buttonStyle(.borderedProminent)
+            }.background(Color.green)
+            
+            HStack {
+                Button("Z") {}.buttonStyle(.borderedProminent)
+                Button("X") {}.buttonStyle(.borderedProminent)
+                Button("C") {}.buttonStyle(.borderedProminent)
+                Button("V") {}.buttonStyle(.borderedProminent)
+                Button("B") {}.buttonStyle(.borderedProminent)
+                Button("N") {}.buttonStyle(.borderedProminent)
+            }.background(Color.yellow)
+            
         }
     }
 }
